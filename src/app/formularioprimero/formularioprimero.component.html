@@ -1,0 +1,20 @@
+<section id="forms">
+  <header>
+    <h1>Form elements</h1>
+  </header>
+  <form #formularioprimero="ngForm" (ngSubmit)="onSubmit(formularioprimero)" novalidate>
+    <fieldset id="forms__input">
+      <legend>Input fields</legend>
+      <p>
+        <label for="user">Usuario</label>
+        <input name="user" id="user" type="text" placeholder="Su nombre de usuario" required ngModel #user="ngModel">
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input name="password" id="password" type="password" required ngModel #password="ngModel">
+      </p>
+      {{formularioprimero.value | json}}
+      <p><button class="btn btn-primary" type="submit" [disabled]="!formularioprimero.valid">Submit</button></p>
+    </fieldset>
+  </form>
+</section>

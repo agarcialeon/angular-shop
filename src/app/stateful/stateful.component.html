@@ -1,0 +1,40 @@
+<main role="main" class="container">
+
+  <!-- <app-formularioprimero></app-formularioprimero> -->
+  <!-- <app-formulariosegundo></app-formulariosegundo> -->
+
+  <div class="starter-template">
+    <h1>Stateful</h1>
+    <p class="lead">Ejemplo de componente stateful.</p>
+
+    <ul class="card-deck">
+      <div class="card" *ngFor="let curso of shopModel.shopItems">
+        <app-stateless [product]="curso" (cursomatriculado)="cursoMatriculado($event)"></app-stateless>
+      </div>
+
+    </ul>
+
+    <!-- <ul class="list-group">
+      <li *ngFor="let boughtItem of boughtItems" class="list-group-item">{{boughtItem.title}}</li>
+    </ul> -->
+
+    <ul class="list-group">
+      <li class="list-group-item disabled">Información matrícula</li>
+      <li *ngFor="let boughtItem of boughtItems" class="list-group-item">{{boughtItem.title}}
+        <span class="badge badge-primary badge-pill">{{boughtItem.price | currency:"€"}}</span>
+      </li>
+      <li class="list-group-item disabled">
+        <h2>Total: {{precioFinal()}}</h2>
+      </li>
+    </ul>
+
+    <app-confirm></app-confirm>
+
+    <!-- EJEMPLO DE SEGUIMIENTO DE CAMBIOS EN ANGULAR - DOCHECK, ONCHANGE, ETC -->
+    <!-- <app-status-cart [price]="precioFinal()" [shopModel]="shopModel.shopItems" (add)="onConfirm()"></app-status-cart> -->
+
+    <!-- EJEMPLO DE CAPTURA DE EVENTOS DE TECLADO -->
+    <!-- <input type="text" (keydown)="onKeyboard($event)"> -->
+
+  </div>
+</main>

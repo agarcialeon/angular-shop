@@ -1,0 +1,30 @@
+<section id="forms">
+  <header>
+    <h1>Form elements</h1>
+  </header>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario)" novalidate>
+    <fieldset id="forms__input">
+      <legend>Input fields</legend>
+      <p>
+        <label for="user">Usuario</label>
+        <input formControlName="user">
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input formControlName="password">
+      </p>
+      <p>
+        <label for="url">URL</label>
+        <input formControlName="url">
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input formControlName="email">
+      </p>
+      <span *ngIf="formulario.get('user').hasError('required')"></span>
+      {{formulario.controls.email.errors | json}}
+      <p><button class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Submit</button></p>
+    </fieldset>
+  </form>
+</section>
+

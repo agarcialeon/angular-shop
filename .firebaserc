@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-shop-391ec": {
+      "hosting": {
+        "shop": [
+          "angular-shop-391ec"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-shop-391ec"
+  }
+}
